@@ -1,6 +1,7 @@
 import express from "express";
 import {
   deleteUser,
+  getSingleUser,
   getUsers,
   login,
   signUp,
@@ -13,6 +14,7 @@ authRouter
   .post("/signup", signUp)
   .post("/login", login)
   .put("/update/:userId", authMiddleware, updateUser)
+  .get("/:userID", authMiddleware, getSingleUser)
   .get("/", authMiddleware, getUsers)
   .delete("/delete/:userId", deleteUser);
 
