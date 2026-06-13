@@ -75,9 +75,9 @@ const getSingleUser = async (req, res) => {
     const { userId } = req.params;
     const user = await UserModel.findById(userId).select("-password");
     if (!user) {
-      return res.status(404).json({ messageL: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
-    res.status(201).json({ message: "User fetched", user });
+    res.status(200).json({ message: "User fetched", user });
   } catch (error) {
     return res
       .status(500)

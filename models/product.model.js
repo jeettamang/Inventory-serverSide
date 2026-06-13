@@ -9,15 +9,19 @@ const productSchema = new Schema(
     description: {
       type: String,
     },
-    supplier:{
-      type:Schema.Types.ObjectId,
-      ref:"Supplier",
-      required:true
+    supplier: {
+      type: Schema.Types.ObjectId,
+      ref: "Supplier",
+      required: true,
     },
     category: {
       type: Schema.Types.ObjectId,
       ref: "Category",
       required: true,
+    },
+    taxRate: {
+      type: Number,
+      default: 13,
     },
     price: {
       type: Number,

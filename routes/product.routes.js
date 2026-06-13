@@ -11,8 +11,8 @@ const productRouter = express.Router();
 productRouter
   .post("/create", authMiddleware, createProduct)
   .get("/", getProducts)
-  .get("/get/:productId", authMiddleware, getSingleProduct)
+  .get("/:productId", getSingleProduct)
   .put("/update/:productId", authMiddleware, editProduct)
-.delete ("/delete/:productId", authMiddleware, deleteProduct);
+  .delete("/delete/:productId", authMiddleware, deleteProduct);
 
 export default productRouter;

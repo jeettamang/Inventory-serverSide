@@ -18,14 +18,19 @@ import authRoutes from "./routes/authRoutes.js";
 import categoryRoutes from "./routes//categoryRoutes.js";
 import productRoutes from "./routes/product.routes.js";
 import supplierRoutes from "./routes/supplier.routes.js";
-import orderoutes from "./routes/order.routes.js"
+import orderoutes from "./routes/order.routes.js";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+import paymentRoutes from "./routes/payment.routes.js"
 
 //use
 app.use("/api/auth", authRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/product", productRoutes);
 app.use("/api/supplier", supplierRoutes);
-app.use("/api/order", orderoutes)
+app.use("/api/order", orderoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/payment", paymentRoutes);
+
 
 const PORT = Number(process.env.PORT || 8888);
 const startServer = async () => {

@@ -13,8 +13,8 @@ const authRouter = express.Router();
 authRouter
   .post("/signup", signUp)
   .post("/login", login)
-  .put("/update/:userId", authMiddleware, updateUser)
-  .get("/:userID", authMiddleware, getSingleUser)
+  .put("/:userId", authMiddleware, updateUser)
+  .get("/:userId", authMiddleware, getSingleUser)
   .get("/", authMiddleware, getUsers)
   .delete("/delete/:userId", deleteUser);
 
